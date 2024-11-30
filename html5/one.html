@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        .demo{
+           margin-left: 350px;
+        }
+        canvas {
+            border: 1px solid black;
+            margin-left: 350px;
+        }
+
+        svg {
+            border: 1px solid black;
+            margin-left: 350px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+    <video src="videoplayback.mp4" muted loop autoplay controls></video><br><br>
+    <audio src="indian-ringtone-113.mp3" muted loop autoplay controls></audio>
+    </div>
+    <h1 style="margin-left: 550px;">Canvas </h1>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+
+
+    <h1 style="margin-left: 550px;">SVG </h1>
+    <svg width="500" height="500">
+        <!-- Rectangle -->
+        <rect x="50" y="50" width="150" height="100" fill="blue" />
+
+        <!-- Circle -->
+        <circle cx="300" cy="100" r="50" fill="red" />
+
+        <!-- Triangle (Polygon) -->
+        <polygon points="200,200 300,350 100,350" fill="green" />
+    </svg>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw a rectangle
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(50, 50, 150, 100);
+
+        // Draw a circle
+        ctx.beginPath();
+        ctx.arc(300, 100, 50, 0, Math.PI * 2, false);
+        ctx.fillStyle = 'red';
+        ctx.fill();
+
+        // Draw a triangle
+        ctx.beginPath();
+        ctx.moveTo(200, 200);
+        ctx.lineTo(300, 350);
+        ctx.lineTo(100, 350);
+        ctx.closePath();
+        ctx.fillStyle = 'green';
+        ctx.fill();
+    </script>
+</body>
+</html>
